@@ -17,7 +17,7 @@ void inicializa(tpilha *p){
 
 int push(tpilha *p, tdado x){
 	if(p-> topo == MAX - 1){ // cabo!
-		return 0; // função termina AQUI!!!!!!!
+		return 0; // funÃ§Ã£o termina AQUI!!!!!!!
 	} else {
 		p->topo++; //Incrementando o topo 
 		p->pilha[p->topo] = x; //Inserindo o dado no vetor
@@ -36,7 +36,7 @@ tdado pop(tpilha *p){
 
 //-----------------------------
 
-int isEmpty(tpilha p){ //É vazio
+int isEmpty(tpilha p){ //Ã‰ vazio
 	if(p.topo == -1){
 		return 1;
 	} else {
@@ -75,8 +75,6 @@ int main(){
 	inicializa(&p1);
 	do{
 		op = menu();
-		mostraPilha(p1);
-		printf("Topo: %d\n", p1.topo);
 		switch(op){
 			case 1:
 				printf("Dado para inserir: ");
@@ -86,6 +84,17 @@ int main(){
 				} else {
 					printf("Stack overflow :(\n");
 				}
+			break;
+			case 2:
+				if(isEmpty(p1) != 1){
+					printf("dado removido: %d", pop(&p1));
+				} else {
+					printf("Lista vazia! Impossivel remover!");
+				}
+			break;
+			case 3:
+				mostraPilha(p1);
+				printf("Topo: %d\n", p1.topo);
 			break;
 			case 0:
 				printf("Saindo...\n");
